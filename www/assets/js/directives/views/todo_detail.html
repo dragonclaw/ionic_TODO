@@ -1,0 +1,4 @@
+<h1>{{ todo.name }}</h1>
+  completed: <input type="checkbox" ng-model="todo.completed">
+  note: <textarea>{{ todo.note }}</textarea>
+  <button ng-click="saveTodo(todo._id)">Salvar TODO</button>

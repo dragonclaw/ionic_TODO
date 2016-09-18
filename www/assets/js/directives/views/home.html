@@ -1,0 +1,38 @@
+<ion-side-menus>
+
+    <!-- Center content -->
+    <ion-side-menu-content>
+      <ion-header-bar class="bar-dark">
+        <h1 class="title">Todo's Jonathan Romero</h1>
+      </ion-header-bar>
+      <ion-content>
+      <ion-list>
+      <ion-label class="item item-input"> SEARCH: <input type="text" ng-model="search.$" placeholder="Search Here"> </ion-label>
+<ion-item ng-repeat="todo in todos| filter:search" >
+		<ion-checkbox ng-model="todo.completed"></ion-checkbox> <a href="#/{{todo._id}}">{{todo.name}}</a>
+</ion-item>
+
+<ion-item>
+<ion-checkbox value="false"> </ion-checkbox>
+<div class="newTodo"> {{newTodo}}</div>
+<ion-label>New task </ion-label><input id="newTodo" type="text" placeholder="Write new TODO HERE!" ng-model="newTodo"> <button class="button" ng-click="save(newTodo)">Create</button>
+
+</ion-item>
+</ion-list>
+
+      </ion-content>
+    </ion-side-menu-content>
+
+    <!-- Left menu -->
+    <ion-side-menu side="left">
+      <ion-header-bar class="bar-dark">
+        <h1 class="title">Projects</h1>
+      </ion-header-bar>
+      <ion-content>
+      <p>THIS IS A TEST</p>
+      </ion-content>
+    </ion-side-menu>
+
+  </ion-side-menus>
+
+
