@@ -1,4 +1,4 @@
-app.controller('DetailController',['$http','$rootScope','jsonTodos','$routeParams','$stateParams',function($http,$rootScope,jsonTodos,$routeParams,$stateParams){
+app.controller('DetailController',['$http','$rootScope','jsonTodos','$routeParams','$stateParams','$state',function($http,$rootScope,jsonTodos,$routeParams,$stateParams,$state){
 //id=$routeParams.id;
 id=$stateParams.id;
   console.log(id);
@@ -7,6 +7,8 @@ jsonTodos.get($rootScope.url,id).then(function(data){
   console.log(data);
 });
 $rootScope.saveTodo= function(todo){
-  jsonTodos.put($rootScope.url,todo,$rootScope.todo._id);
+  alert(todo.note);
+  jsonTodos.put($rootScope.url,todo,todo._id);
+  $state.go('home');
 };
 }]);

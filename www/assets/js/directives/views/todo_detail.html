@@ -1,6 +1,8 @@
 <ion-view title="detail">
 <h1>{{ todo.name }}</h1>
-  completed: <input type="checkbox" ng-model="todo.completed">
-  note: <textarea>{{ todo.note }}</textarea>
-  <button ng-click="saveTodo(todo._id)">Salvar TODO</button>
+  <form name="reviewForm" ng-submit="saveTodo(todo)" novalidate>
+    completed: <input type="checkbox" ng-model="todo.completed">
+    note: <textarea ng-model="todo.note">{{ todo.note }}</textarea>
+    <input type="submit" value="Salvar TODO"/>
+  </form>
   </ion-view>

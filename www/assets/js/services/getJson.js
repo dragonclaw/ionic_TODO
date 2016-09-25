@@ -17,7 +17,8 @@ app.factory('jsonTodos', ['$http', function($http){
 		                        method : 'POST',
 		                        url : url+'todos/',
 		                        data : {name:setData,
-														completed:false
+														completed:false,
+                            note:''
 														},
 		                        headers : {
 		                            'Content-Type' : 'application/json'
@@ -31,9 +32,8 @@ app.factory('jsonTodos', ['$http', function($http){
 			return $http({
 			                        method : 'PUT',
 			                        url : url+'todos/'+id,
-			                        data : {"name":setData.name,
-															"completed":setData.completed,
-															"note":setData.note
+			                        data : {note:setData.note,
+															completed:setData.completed
 															},
 			                        headers : {
 			                            'Content-Type' : 'application/json'
