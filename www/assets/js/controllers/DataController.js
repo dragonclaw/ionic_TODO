@@ -1,4 +1,4 @@
-app.controller('DataController', ['$http','$rootScope','$scope','jsonTodos', function($http,$rootScope,$scope,jsonTodos){
+app.controller('DataController', ['$http','$rootScope','$scope','jsonTodos','$state',function($http,$rootScope,$scope,jsonTodos,$state){
 	$rootScope.url="http://192.168.1.111:3000/";
 	jsonTodos.get($rootScope.url,0).then(function(data){
 		$rootScope.todos = data;

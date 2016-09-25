@@ -7,7 +7,6 @@ jsonTodos.get($rootScope.url,id).then(function(data){
   console.log(data);
 });
 $rootScope.saveTodo= function(todo){
-  alert($rootScope.todo._id);
   jsonTodos.put($rootScope.url,todo,$rootScope.todo._id);
 };
 }]);

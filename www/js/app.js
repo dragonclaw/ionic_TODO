@@ -45,4 +45,5 @@ app.config(function($routeProvider,$ionicConfigProvider,$stateProvider,$urlRoute
       controller: 'DetailController'
     });
   $urlRouterProvider.otherwise('/');
+  $ionicConfigProvider.views.maxCache(0);
 });
