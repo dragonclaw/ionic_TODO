@@ -4,10 +4,7 @@ app.controller('DataController', ['$http','$rootScope','$scope','jsonTodos', fun
 		$rootScope.todos = data;
 	});
 	$rootScope.save=function(todo){
-		alert("this is the todo" + todo);
-		console.log(test);
 		var test = jsonTodos.post($rootScope.url,todo);
-		alert(test);
-		console.log(test);
+    $state.go($state.current, {}, {reload: true});
 	}
 }]);

@@ -1,5 +1,5 @@
 var app = angular.module('todoApp', ['ngRoute']);
-
+/*
 app.config(function($routeProvider) {
 	$routeProvider
     .when('/', {
@@ -11,3 +11,4 @@ app.config(function($routeProvider) {
         controller: 'DetailController'
      });
 });
+*/

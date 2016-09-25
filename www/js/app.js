@@ -23,8 +23,8 @@ var app = angular.module('todoApp', ['ionic', 'ngRoute'])
   });
 })
 
-app.config(function($routeProvider) {
-  $routeProvider
+app.config(function($routeProvider,$ionicConfigProvider,$stateProvider,$urlRouterProvider) {
+  /*$routeProvider
     .when('/', {
       controller: 'DataController',
       templateUrl: 'assets/js/directives/views/home.html'
@@ -32,5 +32,17 @@ app.config(function($routeProvider) {
     .when('/:id', {
         templateUrl: 'assets/js/directives/views/todo_detail.html',
         controller: 'DetailController'
-     });
+     });*/
+  $stateProvider
+    .state('home', {
+      url: '/',
+      templateUrl: 'assets/js/directives/views/home.html',
+      controller: 'DataController'
+    })
+    .state('detail', {
+      url: '/:id',
+      templateUrl: 'assets/js/directives/views/todo_detail.html',
+      controller: 'DetailController'
+    });
+  $urlRouterProvider.otherwise('/');
 });
